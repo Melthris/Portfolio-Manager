@@ -1,0 +1,148 @@
+[
+    {
+        "id": 1,
+        "title": "Project #1",
+        "linkref": "",
+        "githubref": "",
+        "year": "2015",
+        "overview": "This is project #1 written in C. I don't have a project URL or a Github link to provide so you won't see these icons highlighted as a result",
+        "tech": [
+            "C"
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Project #2",
+        "linkref": "",
+        "githubref": "githublinkhere",
+        "year": "2018",
+        "overview": "This is Project #2 with a Github link and a web based tech stack selected",
+        "tech": [
+            "CSS",
+            "HTML",
+            "Javascript",
+            "TailwindCSS",
+            "Typescript"
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Project #3",
+        "linkref": "",
+        "githubref": "",
+        "year": "2016",
+        "overview": "Project #3 has an incorrect year added so you won't see this after Project #2 as these project's are ordered by the year in which they were made in",
+        "tech": [
+            ".Net",
+            "C#"
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Project #4",
+        "linkref": "projectwebsitehere",
+        "githubref": "githublinkhere",
+        "year": "2019",
+        "overview": "Project #4 has included its project website and Github link so you will see them both visible for this project entry.",
+        "tech": [
+            "RAILS",
+            "Ruby"
+        ]
+    },
+    {
+        "id": 5,
+        "title": "Project #5",
+        "linkref": "projectwebsitehere",
+        "githubref": "",
+        "year": "2020",
+        "overview": "Project #5 only has a project website entered, no Github link provided.",
+        "tech": [
+            "CSS",
+            "HTML",
+            "Javascript",
+            "jQuery",
+            "NPM",
+            "ShadCN",
+            "TailwindCSS",
+            "Typescript"
+        ]
+    },
+    {
+        "id": 6,
+        "title": "Project #6",
+        "linkref": "",
+        "githubref": "",
+        "year": "2024",
+        "overview": "Project #6 has a wild tech stack added.",
+        "tech": [
+            ".Net",
+            "Ajax",
+            "Angular",
+            "Assembly",
+            "Bootstrap",
+            "Bun",
+            "C#",
+            "CSS",
+            "HTML",
+            "Javascript",
+            "jQuery",
+            "JSON",
+            "MySQL",
+            "NPM",
+            "PHP",
+            "PostgreSQL",
+            "Python",
+            "React",
+            "Ruby",
+            "TailwindCSS",
+            "Typescript"
+        ]
+    },
+    {
+        "title": "test",
+        "linkref": "",
+        "githubref": "",
+        "year": "2010",
+        "overview": "fdgfdgfdgfdgfdg",
+        "tech": [
+            "C++",
+            "Lua"
+        ],
+        "id": 7
+    },
+    {
+        "title": "fgfdgg",
+        "linkref": "",
+        "githubref": "",
+        "year": "2005",
+        "overview": "fgfdgfdgfdggd",
+        "tech": [
+            "Assembly"
+        ],
+        "id": 8
+    },
+    {
+        "title": "fgdfgfdg",
+        "linkref": "",
+        "githubref": "",
+        "year": "2005",
+        "overview": "fgfdgfdg",
+        "tech": [
+            ".Net",
+            "C#",
+            "C"
+        ],
+        "id": 9
+    },
+    {
+        "title": "dfgdfgfdgfdgd",
+        "linkref": "",
+        "githubref": "",
+        "year": "2030",
+        "overview": "dfgfdgfdgg",
+        "tech": [
+            "Python"
+        ],
+        "id": 10
+    }
+]
