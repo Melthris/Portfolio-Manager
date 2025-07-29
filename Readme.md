@@ -7,7 +7,9 @@ So what is this? It's a web-based Portfolio Manager built with PHP, JavaScript, 
 This project is an ongoing one and will inevitably change and be refined over time. There are most certainly issues with this and there are also going to be bugs with this initial release so I'll clean them up when I can. Suggestions and feedback are welcome.
 
 The default login credentials are:
+
 Username: John.Doe
+
 Password: Password123!
 
 ---
