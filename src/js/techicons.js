@@ -1,5 +1,5 @@
 const techIcons = {
-    ".Net": "src/icons/.Net.svg",
+    ".Net": "src/icons/.NET.svg",
     "Ajax": "src/icons/Ajax.svg",
     "Angular": "src/icons/Angular.svg",
     "Assembly": "src/icons/Assembly.svg",
