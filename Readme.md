@@ -1,6 +1,6 @@
 # 📁 Portfolio Manager
 
-I made this project initially for myself as I wanted to showcase my portfolio and have the ability to add/modify and delete entries seemlessly if needed but decided to strip it out and clean it up (somwhat) and make this repo so anybody else can quickly plug this into their own website.
+I made this project initially for myself as I wanted to showcase my portfolio and have the ability to add/modify and delete entries seemlessly if needed but decided to strip it out and clean it up (somewhat) and make this repo so anybody else can quickly plug this into their own website.
 
 So what is this? It's a web-based Portfolio Manager built with PHP, JavaScript, and HTML/CSS to help you manage and organise your portfolio to showcase to potential clients or employers.
 
@@ -22,6 +22,11 @@ Password: Password123!
 - You can dynamically add any technologies to your projects 'Tech Stack'
 - Github repo link can be added to the project entry
 - Projects are automatically sorted by date year of project.
+
+## To Add In The Future
+- Sort portfolio entries by month and year
+- CSS clean up
+- Additional tech stack technologies
 
 
 ---
