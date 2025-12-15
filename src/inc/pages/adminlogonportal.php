@@ -9,7 +9,7 @@
          <div class="user-text"><input name="Username" class="textbox" type="text" placeholder=""></div>
         
          <h4>Password:</h4>
-         <div class="user-text"><input name="Password" class="textbox" type="text" placeholder=""></div>
+         <div class="user-text"><input name="Password" class="textbox" type="password" placeholder=""></div>
          <?php if(isset($msg)){?>
          <h3><?php echo $msg;?></h3>
          <?php } ?>

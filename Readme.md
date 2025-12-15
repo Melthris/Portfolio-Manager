@@ -21,10 +21,9 @@ Password: Password123!
 - Reference the projects website that demonstrates the project if available
 - You can dynamically add any technologies to your projects 'Tech Stack'
 - Github repo link can be added to the project entry
-- Projects are automatically sorted by date year of project.
+- Projects are automatically sorted by full date of project.
 
 ## To Add In The Future
-- Sort portfolio entries by month and year
 - Filter by tech type/year
 - CSS clean up
 - Additional tech stack technologies

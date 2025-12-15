@@ -1,14 +1,15 @@
 <?php
 session_start();
 
-if (isset($_POST['Submit'])) {
-    $logins = array('John.Doe' => 'Password123!');
-    #echo getenv('PRIVATE_LOGIN_PASSWORD');
-    #echo getenv('PRIVATE_LOGIN_USERNAME');
-    $Username = isset($_POST['Username']) ? $_POST['Username'] : '';
-    $Password = isset($_POST['Password']) ? $_POST['Password'] : '';
+require_once __DIR__ . '/logindetails.php'; // Calling in login details
 
-    if (isset($logins[$Username]) && $logins[$Username] == $Password) {
+if (isset($_POST['Submit'])) {
+    $logins = [ADMIN_USERNAME => ADMIN_PASSWORD];
+
+    $Username = $_POST['Username'] ?? '';
+    $Password = $_POST['Password'] ?? '';
+
+    if (isset($logins[$Username]) && $logins[$Username] === $Password) {
         $_SESSION['UserData']['Username'] = $Username;
 
         // Redirect BEFORE any output
