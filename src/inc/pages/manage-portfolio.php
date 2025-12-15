@@ -15,7 +15,7 @@ rejectIfNotLoggedIn()
         <div class="project-container"></div>  
          <div class="project-details"> 
           <div class="project-name"><input class="textbox" type="text" id="editTitle" placeholder="Project Name"></div>
-          <div class="project-year"><input class="textbox" type="text" id="editYear" placeholder="Year"></div>
+          <div class="project-date"><input class="textbox" type="date" id="editDate" placeholder="Date"></div>
          </div>
          <div class="editlinks">
          <input class="textbox" type="text" id="editLinkref" placeholder="URL of Project">
@@ -34,7 +34,7 @@ rejectIfNotLoggedIn()
         <div class="project-container"></div>  
          <div class="project-details"> 
           <div class="project-name"><input class="textbox" type="text" id="newTitle" placeholder="Project Name"></div>
-          <div class="project-year"><input class="textbox" type="text" id="newYear" placeholder="Year"></div>
+          <div class="project-date"><input class="textbox" type="date" id="newDate" placeholder="Date"></div>
          </div>
          <div class="editlinks">
          <input class="textbox" type="text" id="newLinkref" placeholder="URL of Project">

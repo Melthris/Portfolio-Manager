@@ -25,9 +25,10 @@ Password: Password123!
 
 ## To Add In The Future
 - Sort portfolio entries by month and year
+- Filter by tech type/year
 - CSS clean up
 - Additional tech stack technologies
-
+- Uniformed iconography for tech types
 
 ---
 

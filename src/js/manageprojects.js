@@ -25,7 +25,7 @@ function renderTechIcons(containerId, selected = []) {
 let currentId = null;
 
 function fetchProjects() {
-fetch("src/js/projects.json")
+fetch("src/js/projects.json?ts=" + Date.now(), { cache: "no-store" })
     .then(res => res.json())
     .then(data => {
         data.sort((a, b) => a.id - b.id);
@@ -51,7 +51,7 @@ function selectProject(id) {
     document.getElementById("editTitle").value = project.title;
     document.getElementById("editLinkref").value = project.linkref;
     document.getElementById("editGithub").value = project.githubref;
-    document.getElementById("editYear").value = project.year;
+    document.getElementById("editDate").value    = project.date || "";
     document.getElementById("editOverview").value = project.overview;
 
     renderTechIcons("editTechIcons", project.tech || []);
@@ -63,7 +63,7 @@ function updateProject() {
         title: document.getElementById("editTitle").value,
         linkref: document.getElementById("editLinkref").value,
         githubref: document.getElementById("editGithub").value,
-        year: document.getElementById("editYear").value,
+        date: document.getElementById("editDate").value,
         overview: document.getElementById("editOverview").value,
         tech: getSelectedTechs("editTechIcons")
     };
@@ -89,7 +89,7 @@ function addProject() {
         title: document.getElementById("newTitle").value,
         linkref: document.getElementById("newLinkref").value,
         githubref: document.getElementById("newGithub").value,
-        year: document.getElementById("newYear").value,
+        date: document.getElementById("newDate").value,
         overview: document.getElementById("newOverview").value,
         tech: getSelectedTechs("newTechIcons")
         

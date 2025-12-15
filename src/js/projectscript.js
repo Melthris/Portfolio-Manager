@@ -3,8 +3,8 @@
   fetch('src/js/projects.json')
     .then(response => response.json())
     .then(projects => {
-      // Sort by year most recent to last
-      projects.sort((a, b) => b.year - a.year);
+      // Sort by date most recent to last
+      projects.sort((a, b) => new Date(b.date) - new Date(a.date));
   
       const container = document.getElementById('projects');
   
@@ -25,20 +25,27 @@
         : '';
 
 
+              let formattedDate = '';
+      if (project.date) {
+        const d = new Date(project.date);
+        formattedDate = new Intl.DateTimeFormat('en-AU', {
+          month: 'long',
+          year: 'numeric'
+        }).format(d);
+      }
         div.innerHTML = `
         <div class="project-box">
         <div class="project-container"></div>  
          <div class="project-details"> 
           <div class="project-name">${project.title}</div>
-          <div class="project-year">(${project.year})</div>
+          <div class="project-date">(${project.date})</div>
          </div>
          <div class="project-links">
          ${externalLinkHTML}
          ${githubLinkHTML}
          </div>
          <div class="project-overview">${project.overview}</div>
-         <h5>Tech Stack</h5> 
-         <div class="stack">${techImages}</div>
+          <div class="stack">${techImages}</div>
         </div>
           `;
   
