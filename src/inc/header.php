@@ -1,11 +1,12 @@
 <?php
 $isLoggedIn = isset($_SESSION['UserData']['Username']);
 $username = $isLoggedIn ? htmlspecialchars($_SESSION['UserData']['Username']) : null;
+require_once __DIR__ . '/version.php';
 ?>
 
 <div class="banner">
     <div class="top-float-name">
-    <h6>Portfolio Manager v0.1</h6>
+    <h6>Portfolio Manager (v<?php echo SITE_VERSION; ?>)</h6>
     </div>
     
     <div class="top-float">

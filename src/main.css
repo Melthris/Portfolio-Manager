@@ -387,11 +387,11 @@ div#projectList {
   color: var(var(--prime-color2));
   }
   
-  .project-year {
+  .project-date {
   color: var(--second-color1);
   font-size:small;
   padding-bottom:1em;
-  width:3em
+  width:3em;
   }
   
   .project-overview {
@@ -399,13 +399,13 @@ div#projectList {
   font-family:inter;
   font-size:small;
   font-weight:400;
-  color:#fff
+  color:#fff;
   }
   
   .project-techstack {
   display:flex;
   flex-wrap:wrap;
-  justify-content:center
+  justify-content:center;
   }
   
   .techimg {
@@ -466,14 +466,14 @@ div#projectList {
   margin:5px;
   cursor:pointer;
   opacity:.5;
-  transition:opacity 0.2s,transform .2s
+  transition:opacity 0.2s,transform .2s;
   }
   
   .tech-icon-selector img.active {
   opacity:1;
   transform:scale(1.1);
   border:2px solid var(--prime-highlight-color);
-  border-radius:5px
+  border-radius:5px;
   }  
   .stack {
     padding-top: 1em;

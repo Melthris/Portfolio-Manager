@@ -11,7 +11,7 @@ if (isset($_POST['Submit'])) {
     if (isset($logins[$Username]) && $logins[$Username] == $Password) {
         $_SESSION['UserData']['Username'] = $Username;
 
-        // 🔁 Redirect BEFORE any output
+        // Redirect BEFORE any output
         header("Location: ../../index.php?page=manage-portfolio");
         exit;
     } else {
