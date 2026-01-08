@@ -1,4 +1,4 @@
-# 📁 Portfolio Manager
+# 📁 Portfolio Manager V0.1.3
 
 I made this project initially for myself as I wanted to showcase my portfolio and have the ability to add/modify and delete entries seemlessly if needed but decided to strip it out and clean it up (somewhat) and make this repo so anybody else can quickly plug this into their own website.
 
@@ -28,6 +28,8 @@ Password: Password123!
 - CSS clean up
 - Additional tech stack technologies
 - Uniformed iconography for tech types
+- Login page revision
+- Portfolio Management revision
 
 ---
 
