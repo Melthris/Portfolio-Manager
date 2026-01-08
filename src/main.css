@@ -382,8 +382,8 @@ div#projectList {
   }
   
   .project-name {
-  width:80%
-  color: var(var(--prime-color2))
+  width:80%;
+  color: var(--prime-color2);
   }
   
   .project-date {
