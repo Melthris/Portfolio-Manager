@@ -8,9 +8,9 @@
   
       const container = document.getElementById('projects');
   
-      projects.forEach(project => {
-        const div = document.createElement('div');
-        div.classList.add('project');
+      projects.forEach((project, index) => {
+      const div = document.createElement('div');
+      div.classList.add('project');
   
         const techImages = project.tech.map(tech => {
           const src = techIcons[tech] || '../icons/unknown.svg'; // fallback
@@ -48,7 +48,8 @@
           <div class="stack">${techImages}</div>
         </div>
           `;
-  
+      div.querySelector('.project-box')
+      .style.setProperty('--i', index);  
         container.appendChild(div);
       });
     })
