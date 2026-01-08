@@ -24,6 +24,8 @@ Password: Password123!
 - Projects are automatically sorted by full date of project.
 
 ## To Add In The Future
+- On the fly colour picker/editor
+- Logo upload functionality
 - Filter by tech type/year
 - CSS clean up
 - Additional tech stack technologies

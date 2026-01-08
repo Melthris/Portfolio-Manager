@@ -4,7 +4,7 @@
         "title": "Project #1",
         "linkref": "",
         "githubref": "",
-        "date": "01-01-2015",
+        "date": "2025-08-02",
         "overview": "This is project #1 written in C. I don't have a project URL or a Github link to provide so you won't see these icons highlighted as a result",
         "tech": [
             "C"
@@ -15,7 +15,7 @@
         "title": "Project #2",
         "linkref": "",
         "githubref": "githublinkhere",
-        "date": "01-01-2018",
+        "date": "2018-07-08",
         "overview": "This is Project #2 with a Github link and a web based tech stack selected",
         "tech": [
             "CSS",
@@ -30,7 +30,7 @@
         "title": "Project #3",
         "linkref": "",
         "githubref": "",
-        "date": "01-01-2016",
+        "date": "2025-10-09",
         "overview": "Project #3 has an incorrect year added so you won't see this after Project #2 as these project's are ordered by the year in which they were made in",
         "tech": [
             ".Net",
@@ -42,7 +42,7 @@
         "title": "Project #4",
         "linkref": "projectwebsitehere",
         "githubref": "githublinkhere",
-        "date": "01-01-2019",
+        "date": "2026-01-08",
         "overview": "Project #4 has included its project website and Github link so you will see them both visible for this project entry.",
         "tech": [
             "RAILS",
@@ -54,7 +54,7 @@
         "title": "Project #5",
         "linkref": "projectwebsitehere",
         "githubref": "",
-        "date": "01-01-2020",
+        "date": "2020-12-11",
         "overview": "Project #5 only has a project website entered, no Github link provided.",
         "tech": [
             "CSS",
@@ -72,7 +72,7 @@
         "title": "Project #6",
         "linkref": "",
         "githubref": "",
-        "date": "01-01-2024",
+        "date": "2024-01-02",
         "overview": "Project #6 has a wild tech stack added.",
         "tech": [
             ".Net",
@@ -102,8 +102,8 @@
         "title": "test",
         "linkref": "",
         "githubref": "",
-        "date": "01-01-2010",
-        "overview": "fdgfdgfdgfdgfdg",
+        "date": "2020-02-28",
+        "overview": "This is a test",
         "tech": [
             "C++",
             "Lua"
@@ -111,22 +111,22 @@
         "id": 7
     },
     {
-        "title": "fgfdgg",
+        "title": "Another Test Project",
         "linkref": "",
         "githubref": "",
-        "date": "01-01-2005",
-        "overview": "fgfdgfdgfdggd",
+        "date": "2022-09-13",
+        "overview": "Project Overview goes here.\n\nA new line here.\n\nAnd another new line goes here.\n\n\nAnd a final one here.",
         "tech": [
             "Assembly"
         ],
         "id": 8
     },
     {
-        "title": "fgdfgfdg",
-        "linkref": "",
-        "githubref": "",
-        "date": "01-01-2005",
-        "overview": "fgfdgfdg",
+        "title": "Example Project 2",
+        "linkref": "projectwebsitehere",
+        "githubref": "githubhere",
+        "date": "2024-06-27",
+        "overview": "Another example of a project here with project URL and Github URL",
         "tech": [
             ".Net",
             "C#",
@@ -135,12 +135,13 @@
         "id": 9
     },
     {
-        "title": "dfgdfgfdgfdgd",
+        "title": "Example Project",
         "linkref": "",
         "githubref": "",
-        "date": "01-01-2030",
-        "overview": "dfgfdgfdgg",
+        "date": "2030-01-09",
+        "overview": "More project information here.\n\nThis is just an example project.",
         "tech": [
+            "C",
             "Python"
         ],
         "id": 10
