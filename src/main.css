@@ -374,7 +374,6 @@ div#projectList {
   backdrop-filter:blur(1px);
   -webkit-backdrop-filter:blur(4px);
   border:.1em solid #f3298752;
-  /* grid-row: none; */
   }
   
   .project-box:hover {
@@ -396,6 +395,7 @@ div#projectList {
   
   .project-overview {
   padding-bottom:2.5em;
+  white-space: pre-line;
   font-family:inter;
   font-size:small;
   font-weight:400;
