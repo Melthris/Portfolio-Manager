@@ -38,7 +38,7 @@
         <div class="project-container"></div>  
          <div class="project-details"> 
           <div class="project-name">${project.title}</div>
-          <div class="project-date">(${project.date})</div>
+          <div class="project-date">(${formattedDate})</div>
          </div>
          <div class="project-links">
          ${externalLinkHTML}
