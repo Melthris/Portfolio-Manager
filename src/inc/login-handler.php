@@ -1,24 +1,35 @@
 <?php
-session_start();
+/**
+ * Login form handler.
+ */
 
-require_once __DIR__ . '/logindetails.php'; // Calling in login details
+declare(strict_types=1);
 
-if (isset($_POST['Submit'])) {
-    $logins = [ADMIN_USERNAME => ADMIN_PASSWORD];
+require_once __DIR__ . '/functions.php';
 
-    $Username = $_POST['Username'] ?? '';
-    $Password = $_POST['Password'] ?? '';
+pmSendNoCacheHeaders();
 
-    if (isset($logins[$Username]) && $logins[$Username] === $Password) {
-        $_SESSION['UserData']['Username'] = $Username;
-
-        // Redirect BEFORE any output
-        header("Location: ../../index.php?page=manage-portfolio");
-        exit;
-    } else {
-        // Optional: redirect back with an error message
-        header("Location: ../../index.php?page=adminlogonportal.php&error=1");
-        exit;
-    }
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    pmRedirect('../../index.php?page=adminlogonportal');
 }
-?>
+
+if (!pmValidateCsrfToken($_POST['csrf_token'] ?? null)) {
+    pmRedirect('../../index.php?page=adminlogonportal&error=csrf');
+}
+
+$login = pmString($_POST['username'] ?? '');
+$password = pmString($_POST['password'] ?? '');
+$rememberMe = isset($_POST['remember_me']);
+$rememberUsername = isset($_POST['remember_username']);
+
+pmStoreRememberedUsername($login, $rememberUsername);
+
+if ($login === '' || $password === '') {
+    pmRedirect('../../index.php?page=adminlogonportal&error=missing');
+}
+
+if (!pmLogin($login, $password, $rememberMe)) {
+    pmRedirect('../../index.php?page=adminlogonportal&error=invalid');
+}
+
+pmRedirect('../../index.php?page=manage-project');

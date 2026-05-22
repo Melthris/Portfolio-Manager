@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="GitLab repository">
+  <path fill="currentColor" d="M61 34.2 56.8 21c-.4-1.4-2.3-1.4-2.8-.1l-4.1 12.7H14.1L10 20.9c-.5-1.3-2.4-1.3-2.8.1L3 34.2c-.4 1.2 0 2.5 1 3.3l28 20.4 28-20.4c1-.8 1.4-2.1 1-3.3Z"></path>
+  <path fill="currentColor" opacity=".75" d="M14.1 33.6 32 57.9 49.9 33.6H14.1Z"></path>
+  <path fill="currentColor" opacity=".55" d="M14.1 33.6 7.2 21 3 34.2c-.4 1.2 0 2.5 1 3.3l10.1-3.9ZM49.9 33.6 60 37.5c1-.8 1.4-2.1 1-3.3L56.8 21l-6.9 12.6Z"></path>
+</svg>

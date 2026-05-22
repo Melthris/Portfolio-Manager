@@ -3,39 +3,98 @@
         "id": 1,
         "title": "Project #1",
         "linkref": "",
-        "githubref": "",
+        "githubref": "gitlab.com",
         "date": "2025-08-02",
         "overview": "This is project #1 written in C. I don't have a project URL or a Github link to provide so you won't see these icons highlighted as a result",
-        "tech": [
-            "C"
-        ]
+        "tech": {
+            "languages": [
+                "C"
+            ],
+            "frameworks_libraries": [],
+            "game_engines": [],
+            "runtimes": [],
+            "databases": [],
+            "data_markup_config": [],
+            "tools_platforms": [],
+            "cloud_hosting": [],
+            "design_ui": [],
+            "misc": []
+        },
+        "os": [
+            "Linux"
+        ],
+        "is_visible": true
     },
     {
         "id": 2,
         "title": "Project #2",
         "linkref": "",
-        "githubref": "githublinkhere",
+        "githubref": "www.github.com",
         "date": "2018-07-08",
         "overview": "This is Project #2 with a Github link and a web based tech stack selected",
-        "tech": [
-            "CSS",
-            "HTML",
-            "Javascript",
-            "TailwindCSS",
-            "Typescript"
-        ]
+        "tech": {
+            "languages": [
+                "CSS",
+                "HTML",
+                "Javascript",
+                "Typescript"
+            ],
+            "frameworks_libraries": [
+                "TailwindCSS"
+            ],
+            "game_engines": [],
+            "runtimes": [],
+            "databases": [],
+            "data_markup_config": [],
+            "tools_platforms": [],
+            "cloud_hosting": [],
+            "design_ui": [],
+            "misc": []
+        },
+        "os": [
+            "macOS",
+            "iOS"
+        ],
+        "is_visible": true
     },
     {
         "id": 3,
         "title": "Project #3",
         "linkref": "",
-        "githubref": "",
+        "githubref": "git.com",
         "date": "2025-10-09",
         "overview": "Project #3 has an incorrect year added so you won't see this after Project #2 as these project's are ordered by the year in which they were made in",
-        "tech": [
-            ".Net",
-            "C#"
-        ]
+        "tech": {
+            "languages": [
+                "C#"
+            ],
+            "frameworks_libraries": [],
+            "game_engines": [],
+            "runtimes": [],
+            "databases": [],
+            "data_markup_config": [],
+            "tools_platforms": [
+                "Arduino"
+            ],
+            "cloud_hosting": [],
+            "design_ui": [
+                "Aseprite",
+                "Blender"
+            ],
+            "misc": [
+                ".Net"
+            ]
+        },
+        "os": [
+            "Web",
+            "Windows",
+            "macOS",
+            "Linux",
+            "iOS",
+            "Android",
+            "Raspberry Pi"
+        ],
+        "is_visible": true
     },
     {
         "id": 4,
@@ -56,16 +115,32 @@
         "githubref": "",
         "date": "2020-12-11",
         "overview": "Project #5 only has a project website entered, no Github link provided.",
-        "tech": [
-            "CSS",
-            "HTML",
-            "Javascript",
-            "jQuery",
-            "NPM",
-            "ShadCN",
-            "TailwindCSS",
-            "Typescript"
-        ]
+        "tech": {
+            "languages": [
+                "CSS",
+                "HTML",
+                "Javascript",
+                "Typescript"
+            ],
+            "frameworks_libraries": [
+                "jQuery",
+                "ShadCN",
+                "TailwindCSS"
+            ],
+            "game_engines": [
+                "Unity",
+                "Unreal Engine"
+            ],
+            "runtimes": [],
+            "databases": [],
+            "data_markup_config": [],
+            "tools_platforms": [],
+            "cloud_hosting": [],
+            "design_ui": [],
+            "misc": []
+        },
+        "os": [],
+        "is_visible": true
     },
     {
         "id": 6,
@@ -80,7 +155,6 @@
             "Angular",
             "Assembly",
             "Bootstrap",
-            "Bun",
             "C#",
             "CSS",
             "HTML",
@@ -88,7 +162,6 @@
             "jQuery",
             "JSON",
             "MySQL",
-            "NPM",
             "PHP",
             "PostgreSQL",
             "Python",
@@ -111,39 +184,83 @@
         "id": 7
     },
     {
+        "id": 8,
         "title": "Another Test Project",
-        "linkref": "",
-        "githubref": "",
+        "linkref": "www.sandery.dev",
+        "githubref": "gitea.com",
         "date": "2022-09-13",
         "overview": "Project Overview goes here.\n\nA new line here.\n\nAnd another new line goes here.\n\n\nAnd a final one here.",
-        "tech": [
-            "Assembly"
+        "tech": {
+            "languages": [
+                "Assembly"
+            ],
+            "frameworks_libraries": [],
+            "game_engines": [],
+            "runtimes": [],
+            "databases": [],
+            "data_markup_config": [],
+            "tools_platforms": [],
+            "cloud_hosting": [],
+            "design_ui": [],
+            "misc": []
+        },
+        "os": [
+            "iOS",
+            "Android",
+            "Raspberry Pi"
         ],
-        "id": 8
+        "is_visible": true
     },
     {
+        "id": 9,
         "title": "Example Project 2",
         "linkref": "projectwebsitehere",
-        "githubref": "githubhere",
+        "githubref": "azure",
         "date": "2024-06-27",
         "overview": "Another example of a project here with project URL and Github URL",
-        "tech": [
-            ".Net",
-            "C#",
-            "C"
-        ],
-        "id": 9
+        "tech": {
+            "languages": [
+                "C",
+                "C#"
+            ],
+            "frameworks_libraries": [],
+            "game_engines": [],
+            "runtimes": [],
+            "databases": [],
+            "data_markup_config": [],
+            "tools_platforms": [],
+            "cloud_hosting": [],
+            "design_ui": [],
+            "misc": [
+                ".Net"
+            ]
+        },
+        "os": [],
+        "is_visible": true
     },
     {
+        "id": 10,
         "title": "Example Project",
         "linkref": "",
-        "githubref": "",
+        "githubref": "bitbuckethere",
         "date": "2030-01-09",
         "overview": "More project information here.\n\nThis is just an example project.",
-        "tech": [
-            "C",
-            "Python"
-        ],
-        "id": 10
+        "tech": {
+            "languages": [
+                "C",
+                "Python"
+            ],
+            "frameworks_libraries": [],
+            "game_engines": [],
+            "runtimes": [],
+            "databases": [],
+            "data_markup_config": [],
+            "tools_platforms": [],
+            "cloud_hosting": [],
+            "design_ui": [],
+            "misc": []
+        },
+        "os": [],
+        "is_visible": true
     }
 ]

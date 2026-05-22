@@ -1,6 +1,10 @@
 <?php
-session_destroy(); // Destroy the session
+/**
+ * Logout placeholder page.
+ *
+ * index.php handles the actual logout before templates are loaded.
+ */
+
+declare(strict_types=1);
 ?>
-<script>
-    window.location.href = "/index.php?page=home";
-</script>
+<p>You have been logged out.</p>

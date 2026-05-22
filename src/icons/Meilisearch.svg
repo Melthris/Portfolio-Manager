@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 96 96" id="Meilisearch--Streamline-Svg-Logos" height="24" width="24">
+  <desc>
+    Meilisearch Streamline Icon: https://streamlinehq.com
+  </desc>
+  <path fill="url(#a)" d="m1 75.4083 17.3668-44.4339c2.4473-6.2617 8.4829-10.3828 15.2057-10.3828h10.4703L26.676 65.0255c-2.4473 6.2616-8.4829 10.3828-15.2058 10.3828H1Z"></path>
+  <path fill="url(#b)" d="m26.478 75.4083 17.3668-44.4339c2.4473-6.2617 8.4829-10.3828 15.2058-10.3828h10.4702L52.154 65.0255c-2.4473 6.2616-8.4829 10.3828-15.2058 10.3828H26.478Z"></path>
+  <path fill="url(#c)" d="m51.9575 75.4083 17.3668-44.4339c2.4473-6.2617 8.4825-10.3828 15.2054-10.3828h10.4707L77.6335 65.0255c-2.4477 6.2616-8.4829 10.3828-15.2058 10.3828H51.9575Z"></path>
+  <defs>
+    <linearGradient id="a" x1="6621.87" x2="-45.829" y1="-398.113" y2="3368.77" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ff5caa"></stop>
+      <stop offset="1" stop-color="#ff4e62"></stop>
+    </linearGradient>
+    <linearGradient id="b" x1="5076.48" x2="-1591.21" y1="-398.126" y2="3368.75" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ff5caa"></stop>
+      <stop offset="1" stop-color="#ff4e62"></stop>
+    </linearGradient>
+    <linearGradient id="c" x1="3531.03" x2="-3136.69" y1="-398.126" y2="3368.77" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ff5caa"></stop>
+      <stop offset="1" stop-color="#ff4e62"></stop>
+    </linearGradient>
+  </defs>
+</svg>

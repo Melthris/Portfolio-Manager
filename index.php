@@ -1,24 +1,53 @@
 <?php
-include 'src/inc/functions.php';
-include 'src/inc/meta.php';
-include 'src/inc/header.php';
+/**
+ * Portfolio Manager
+ *
+ * The file but routes through a whitelist so disabled 
+ * modules and admin-only pages are protected.
+ */
+
+declare(strict_types=1);
+
+require_once __DIR__ . '/src/inc/functions.php';
+
+$rawPage = isset($_GET['page']) ? (string) $_GET['page'] : PM_DEFAULT_PAGE;
+$pageForLogout = pmNormalisePageName($rawPage);
+
+if ($pageForLogout === 'logout') {
+    pmLogout();
+    pmRedirect('index.php?page=' . PM_DEFAULT_PAGE);
+}
+
+$route = pmResolvePage($rawPage, pmIsLoggedIn());
+
+if ($route['redirect'] !== null) {
+    pmRedirect($route['redirect']);
+}
+
+if ($route['is404']) {
+    http_response_code(404);
+}
+
+$page = $route['page'];
+$pageTitle = $route['title'];
+$requestedPage = $route['requested'];
+
+include __DIR__ . '/src/inc/meta.php';
+include __DIR__ . '/src/inc/header.php';
 ?>
 
 <main>
-<div class="bg"></div>
+    <div class="bg"></div>
     <?php
-    $page = isset($_GET['page']) ? $_GET['page'] : 'home'; // Default page
+    $pageFile = __DIR__ . "/src/inc/pages/{$page}.php";
 
-    $file = "src/inc/pages/{$page}.php";
-
-    if (file_exists($file)) {
-        include $file;
+    if (is_file($pageFile)) {
+        include $pageFile;
     } else {
-        include "src/inc/pages/404.php"; // A classic redirect when people try invalid links
-
+        http_response_code(404);
+        include __DIR__ . '/src/inc/pages/404.php';
     }
     ?>
 </main>
-<?php
-include 'src/inc/footer.php';
-?>
+
+<?php include __DIR__ . '/src/inc/footer.php'; ?>

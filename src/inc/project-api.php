@@ -1,139 +1,99 @@
 <?php
-// Always return JSON and prevent caching
-header('Content-Type: application/json; charset=utf-8');
-header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
-header('Pragma: no-cache');
-header('Expires: 0');
+/**
+ * Project JSON API.
+ *
+ * Accepts authenticated JSON POST requests for add, update, and delete actions.
+ * Project technology data supports both old flat arrays and new categorised tech.
+ */
 
-// Only allow POST
+declare(strict_types=1);
+
+require_once __DIR__ . '/functions.php';
+
+pmRequirePermission('can_manage_projects');
+pmSendNoCacheHeaders();
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    http_response_code(405);
-    echo json_encode([
-        "status"  => "error",
-        "message" => "Method not allowed. Use POST."
-    ]);
-    exit;
+    pmJsonResponse(['success' => false, 'message' => 'POST required.'], 405);
 }
 
-// Read JSON request body
-$rawBody = file_get_contents("php://input");
-$request = json_decode($rawBody, true);
+$payload = json_decode((string) file_get_contents('php://input'), true);
 
-if (!is_array($request)) {
-    http_response_code(400);
-    echo json_encode([
-        "status"  => "error",
-        "message" => "Invalid JSON payload",
-        "raw"     => $rawBody
-    ]);
-    exit;
+if (!is_array($payload)) {
+    pmJsonResponse(['success' => false, 'message' => 'Invalid JSON payload.'], 400);
 }
 
-$action = $request['action'] ?? '';
+$action = pmString($payload['action'] ?? '');
+$projects = pmReadProjects();
+$projectPayload = is_array($payload['project'] ?? null) ? $payload['project'] : $payload;
 
-$jsonFile = __DIR__ . '/../js/projects.json';
-$dataRaw = @file_get_contents($jsonFile);
-$data = json_decode($dataRaw, true);
-
-// Ensure $data is an array
-if (!is_array($data)) {
-    $data = [];
+/**
+ * Builds a normalised project record from API input.
+ *
+ * @param array<string, mixed> $payload Input payload.
+ * @param int $id Project ID to use.
+ * @return array<string, mixed> Normalised project.
+ */
+function pmProjectFromPayload(array $payload, int $id): array
+{
+    return [
+        'id' => $id,
+        'title' => pmString($payload['title'] ?? ''),
+        'linkref' => pmString($payload['linkref'] ?? ''),
+        'githubref' => pmString($payload['githubref'] ?? ''),
+        'date' => pmString($payload['date'] ?? ''),
+        'overview' => pmString($payload['overview'] ?? ''),
+        'tech' => pmNormaliseProjectTech($payload['tech'] ?? []),
+        'os' => pmStringList($payload['os'] ?? []),
+        'is_visible' => (bool) ($payload['is_visible'] ?? true),
+    ];
 }
 
-switch ($action) {
-    case 'update':
-        if (!isset($request['project']['id'])) {
-            http_response_code(400);
-            echo json_encode([
-                "status"  => "error",
-                "message" => "Missing project id for update"
-            ]);
-            exit;
+if ($action === 'add') {
+    $nextId = $projects === [] ? 1 : max(array_map(static fn (array $project): int => (int) ($project['id'] ?? 0), $projects)) + 1;
+    $project = pmProjectFromPayload($projectPayload, $nextId);
+
+    if ($project['title'] === '') {
+        pmJsonResponse(['success' => false, 'message' => 'Project title is required.'], 422);
+    }
+
+    $projects[] = $project;
+    pmWriteProjects($projects);
+    pmJsonResponse(['success' => true, 'status' => 'success', 'project' => $project]);
+}
+
+if ($action === 'update') {
+    $id = (int) ($payload['id'] ?? ($projectPayload['id'] ?? 0));
+    $found = false;
+
+    foreach ($projects as &$project) {
+        if ((int) ($project['id'] ?? 0) === $id) {
+            $project = pmProjectFromPayload($projectPayload, $id);
+            $found = true;
+            break;
         }
+    }
+    unset($project);
 
-        foreach ($data as &$project) {
-            if ((int)$project['id'] === (int)$request['project']['id']) {
-                $project['title']     = $request['project']['title']     ?? $project['title'];
-                $project['overview']  = $request['project']['overview']  ?? $project['overview'];
-                $project['tech']      = $request['project']['tech']      ?? $project['tech'];
-                $project['linkref']   = $request['project']['linkref']   ?? $project['linkref'];
-                $project['githubref'] = $request['project']['githubref'] ?? $project['githubref'];
-                $project['date']      = $request['project']['date']      ?? $project['date']; // full date (YYYY-MM-DD)
-                break;
-            }
-        }
-        unset($project); // break reference
-        break;
+    if (!$found) {
+        pmJsonResponse(['success' => false, 'message' => 'Project not found.'], 404);
+    }
 
-    case 'delete':
-        if (!isset($request['id'])) {
-            http_response_code(400);
-            echo json_encode([
-                "status"  => "error",
-                "message" => "Missing id for delete"
-            ]);
-            exit;
-        }
-
-        $idToDelete = (int)$request['id'];
-        $data = array_values(
-            array_filter($data, fn($p) => (int)$p['id'] !== $idToDelete)
-        );
-        break;
-
-    case 'add':
-        if (!isset($request['project'])) {
-            http_response_code(400);
-            echo json_encode([
-                "status"  => "error",
-                "message" => "Missing project data for add"
-            ]);
-            exit;
-        }
-
-        // Generate a new ID
-        $ids = array_column($data, 'id');
-        $maxId = empty($ids) ? 0 : max(array_map('intval', $ids));
-        $newId = $maxId + 1;
-
-        $newProject = $request['project'];
-        $newProject['id'] = $newId;
-
-        // Ensure required fields exist (basic safety)
-        $newProject['title']     = $newProject['title']     ?? 'Untitled Project';
-        $newProject['overview']  = $newProject['overview']  ?? '';
-        $newProject['tech']      = $newProject['tech']      ?? [];
-        $newProject['linkref']   = $newProject['linkref']   ?? '';
-        $newProject['githubref'] = $newProject['githubref'] ?? '';
-        $newProject['date']      = $newProject['date']      ?? date('d-m-Y');
-
-        $data[] = $newProject;
-        break;
-
-    default:
-        http_response_code(400);
-        echo json_encode([
-            "status"  => "error",
-            "message" => "Invalid or missing action"
-        ]);
-        exit;
+    pmWriteProjects($projects);
+    pmJsonResponse(['success' => true, 'status' => 'success']);
 }
 
-// Write back to JSON file
-$result = @file_put_contents(
-    $jsonFile,
-    json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES),
-    LOCK_EX
-);
+if ($action === 'delete') {
+    $id = (int) ($payload['id'] ?? 0);
+    $before = count($projects);
+    $projects = array_values(array_filter($projects, static fn (array $project): bool => (int) ($project['id'] ?? 0) !== $id));
 
-if ($result === false) {
-    http_response_code(500);
-    echo json_encode([
-        "status"  => "error",
-        "message" => "Failed to write projects.json (check file permissions)"
-    ]);
-    exit;
+    if (count($projects) === $before) {
+        pmJsonResponse(['success' => false, 'message' => 'Project not found.'], 404);
+    }
+
+    pmWriteProjects($projects);
+    pmJsonResponse(['success' => true, 'status' => 'success']);
 }
 
-// All good
-echo json_encode(["status" => "success"]);
+pmJsonResponse(['success' => false, 'message' => 'Unknown action.'], 400);
